@@ -26,7 +26,11 @@ spec:
       containers:
         - name: nginx
           securityContext:
-            {}
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1000
+            allowPrivilegeEscalation: false
+            
           image: "nginx:1.16.0"
           imagePullPolicy: IfNotPresent
           ports:
