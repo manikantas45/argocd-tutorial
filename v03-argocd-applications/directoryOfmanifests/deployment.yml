@@ -30,6 +30,13 @@ spec:
             runAsNonRoot: true
             runAsUser: 1000
             allowPrivilegeEscalation: false
+          resources:
+            requests:
+              cpu: "250m"  # Minimum CPU request
+              memory: "512Mi"  # Minimum RAM request
+            limits:
+              cpu: "500m"  # Maximum CPU limit
+              memory: "1Gi"  # Maximum RAM limit 
             
           image: "nginx:1.16.0"
           imagePullPolicy: IfNotPresent
